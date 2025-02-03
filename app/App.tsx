@@ -1,11 +1,15 @@
-import ExpenseTable from "./components/index.ts";
+import { ExpenseList, ExpenseForm, NavBar, TotalExtract } from "./components";
 import "../app/App.css";
+import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
   return (
-    <>
-      <ExpenseTable />
-    </>
+    <GlobalProvider>
+      <NavBar />
+      <TotalExtract />
+      <ExpenseForm />
+      <ExpenseList />
+    </GlobalProvider>
   );
 }
 

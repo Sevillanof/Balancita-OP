@@ -1,3 +1,4 @@
-import ExpenseTable from "./ExpenseTable/ExpenseTable";
-
-export default ExpenseTable;
+export * from "./ExpenseTable/Transactions/ExpenseForm";
+export * from "./ExpenseTable/Transactions/ExpenseList";
+export * from "./Header/NavBar";
+export * from "./Header/TotalExtract";
