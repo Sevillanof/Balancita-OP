@@ -11,7 +11,7 @@ export const ExpenseForm = () => {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     addTransaction({
-      id: window.crypto.getRandomValues(new Uint8Array(1))[0],
+      id: window.crypto.getRandomValues(new Uint16Array(1))[0],
       description,
       amount: +amount, // Cualuier valor que reciba lo convierte a número
     });
@@ -19,25 +19,23 @@ export const ExpenseForm = () => {
 
   return (
     <div className="container">
-      <h1>Balancita⚖️</h1>
-
       <form className="form" onSubmit={onSubmit}>
         <input
-          className="input-form"
+          className="input-description"
           type="text"
           placeholder="Ingresa tu gasto..."
           onChange={(event) => setDescription(event.target.value)}
         />
 
         <input
-          className="input-form"
+          className="input-amount"
           type="number"
           step={0.01}
           placeholder="00.00"
           onChange={(event) => setAmount(parseFloat(event.target.value))}
         />
 
-        <button className="add-button">Guardar</button>
+        <button className="add-button">✅</button>
       </form>
     </div>
   );

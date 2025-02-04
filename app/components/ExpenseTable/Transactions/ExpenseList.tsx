@@ -9,11 +9,11 @@ export const ExpenseList = () => {
       {transactions.map((transaction) => (
         <div className="row-div" key={transaction.id}>
           <span>{transaction.description}</span>
-          <p>{transaction.amount}</p>
+          <p>${transaction.amount}</p>
           <button
             className="delete-button"
             onClick={() => deleteTransaction(transaction.id)}>
-            X{" "}
+            ✕
           </button>
         </div>
       ))}

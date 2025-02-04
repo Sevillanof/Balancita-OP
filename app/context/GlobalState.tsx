@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import AppReducer from "./AppReducer";
 
 interface Transaction {
@@ -6,7 +6,7 @@ interface Transaction {
   description: string;
   amount: number;
 }
-interface GlovalState {
+interface GlobalState {
   transactions: Transaction[];
   addTransaction: (transaction: Transaction) => void;
   deleteTransaction: (id: number) => void;
@@ -16,13 +16,13 @@ interface GlobalProviderProps {
   children: React.ReactNode;
 }
 
-const initialState = {
+const initialState: GlobalState = {
   transactions: [],
   addTransaction: () => {},
   deleteTransaction: () => {},
 };
 
-export const Context = createContext<GlovalState>(initialState);
+export const Context = createContext<GlobalState>(initialState);
 
 export const useGlobalState = () => {
   const context = useContext(Context);
@@ -30,7 +30,14 @@ export const useGlobalState = () => {
 };
 
 export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
-  const [state, dispatch] = useReducer(AppReducer, initialState);
+  const [state, dispatch] = useReducer(AppReducer, initialState, () => {
+    const localData = localStorage.getItem("transactions");
+    return localData ? { transactions: JSON.parse(localData) } : initialState;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("transactions", JSON.stringify(state.transactions));
+  }, [state]);
 
   const addTransaction = (transaction: Transaction) => {
     dispatch({
