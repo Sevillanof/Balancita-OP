@@ -4,9 +4,8 @@ export const NavBar = () => {
   return (
     <>
       <div className="container-nav">
-        <h2>Balancita⚖️</h2>
+        <h1>Balancita⚖️</h1>
       </div>
-      ;
     </>
   );
 };

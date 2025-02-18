@@ -1,8 +1,13 @@
-import { useGlobalState } from "../../../context/GlobalState";
+import React from "react";
+import { useGlobalState } from "../../../../context/GlobalState";
 import "./ExpenseList.css";
 
 export const ExpenseList = () => {
   const { transactions, deleteTransaction } = useGlobalState();
+
+  if (transactions.length <= 0) return <div>Ingrese sus nuevos gastos</div>;
+
+  console.log(transactions);
 
   return (
     <div className="container">

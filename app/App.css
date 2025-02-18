@@ -1,0 +1,14 @@
+const html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #7286a0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+}
