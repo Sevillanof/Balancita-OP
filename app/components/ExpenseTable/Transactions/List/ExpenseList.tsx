@@ -1,4 +1,3 @@
-import React from "react";
 import { useGlobalState } from "../../../../context/GlobalState";
 import "./ExpenseList.css";
 
@@ -12,15 +11,18 @@ export const ExpenseList = () => {
   return (
     <div className="container">
       {transactions.map((transaction) => (
-        <div className="row-div" key={transaction.id}>
-          <span>{transaction.description}</span>
-          <p>${transaction.amount}</p>
-          <button
-            className="delete-button"
-            onClick={() => deleteTransaction(transaction.id)}>
-            ✕
-          </button>
-        </div>
+        <table className="row-table" key={transaction.id}>
+          <tr>
+            <td className="row-description">{transaction.description}</td>
+            <td className="row-category">{transaction.category}</td>
+            <td className="row-amount">${transaction.amount}</td>
+            <button
+              className="delete-button"
+              onClick={() => deleteTransaction(transaction.id)}>
+              ✕
+            </button>
+          </tr>
+        </table>
       ))}
     </div>
   );

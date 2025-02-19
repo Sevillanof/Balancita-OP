@@ -3,6 +3,8 @@ import AppReducer from "./AppReducer";
 
 interface Transaction {
   id: number;
+  date: string;
+  category: string;
   description: string;
   amount: number;
 }

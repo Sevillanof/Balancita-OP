@@ -4,24 +4,31 @@ import { useGlobalState } from "../../../../context/GlobalState";
 import "./ExpenseForm.css";
 import CustomInput from "./components/CustomInput";
 import { schema, FormValues } from "./models/form.model";
+import moment from "moment";
 
 export const ExpenseForm = () => {
   const { addTransaction } = useGlobalState();
 
   const {
     control,
+    register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
+    defaultValues: {
+      description: "",
+      category: "",
+      amount: 0,
+    },
   });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
     addTransaction({
       id: window.crypto.getRandomValues(new Uint16Array(1))[0],
-      // date: new Date().toISOString(), // Pasarle la fecha actual y guardarla.
+      date: moment().format("L"),
+      category: data.category,
       description: data.description,
       amount: +data.amount, // Modifico el string para que sea un numero
     });
@@ -37,6 +44,12 @@ export const ExpenseForm = () => {
         type="text"
         error={errors.description}
       />
+      <select className="select-form" {...register("category")}>
+        <option value="General">General</option>
+        <option value="Comida">Comida</option>
+        <option value="Ocio">Ocio</option>
+        <option value="Transporte">Transporte</option>
+      </select>
       {/* Buscar porque no puedo dejar el TYPE del CustomInput en number, solucion provisional, dejarlo como String */}
       <CustomInput
         name="amount"

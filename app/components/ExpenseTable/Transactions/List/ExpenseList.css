@@ -17,10 +17,7 @@
 }
 
 /* Cada fila de gasto */
-.row-div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.row-table {
   background: #fff;
   padding: 0.8rem;
   border: 1px solid #e0e0e0;
@@ -28,30 +25,25 @@
   margin-bottom: 0.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   min-width: none;
+  table-layout: auto;
+  width: 100%;
 }
-
+td {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
 /* Descripción del gasto */
-.row-div span {
-  flex: 1;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.9rem;
-  color: #2d3436;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin-right: 0.5rem;
+.row-description {
+  width: 350px;
 }
 
 /* Valor del gasto: fuente Inter con números tabulares para mejor legibilidad */
-.row-div p {
-  font-family: "Inter", sans-serif;
-  font-variant-numeric: tabular-nums;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #2d3436;
-  margin: 0 0.5rem;
-  min-width: 70px;
-  text-align: right;
+.row-category {
+  width: 140px;
+}
+
+.row-amount {
+  width: 220px;
 }
 
 /* Botón de eliminación: diseño minimalista y sutil */
