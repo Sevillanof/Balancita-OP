@@ -1,50 +1,93 @@
-# React + TypeScript + Vite
+# Proyecto de Gestión de Gastos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación web para gestionar ingresos y gastos de manera eficiente, permitiendo agregar transacciones, visualizar un extracto total y listar transacciones en una tabla personalizada.
 
-Currently, two official plugins are available:
+## Tecnologías utilizadas
+- **Framework:** React con TypeScript y Vite
+- **Estilos:** CSS
+- **Estado Global:** Context API con Reducer
+- **Linter:** ESLint
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instalación y ejecución
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+### 1. Clonar el repositorio
+```bash
+  git clone <URL_DEL_REPOSITORIO>
+  cd <NOMBRE_DEL_PROYECTO>
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
+### 2. Instalar dependencias
+```bash
+  npm install
 ```
+
+### 3. Ejecutar en modo desarrollo
+```bash
+  npm run dev
+```
+La aplicación estará disponible en **http://localhost:3000**.
+
+## Scripts disponibles
+- `npm run dev`: Inicia la aplicación en modo desarrollo.
+- `npm run build`: Compila la aplicación para producción.
+- `npm run lint`: Ejecuta ESLint para encontrar y corregir errores en el código.
+
+## Estructura del Proyecto
+
+```
+.gitignore
+.prettierrc
+app/
+  ├── App.css
+  ├── App.tsx
+components/
+  ├── ExpenseTable/
+  │   ├── index.ts
+  ├── Transactions/
+  │   ├── Form/
+  │   ├── List/
+  │   ├── Header/
+  │   ├── Extract/
+  │   ├── index.ts
+  ├── NavBar/
+  │   ├── index.ts
+context/
+  ├── AppReducer.tsx
+  ├── GlobalState.tsx
+  ├── index.ts
+styles/
+  ├── index.css
+utils/
+  ├── ExpenseTools.tsx
+  ├── FormatCurrency.tsx
+  ├── index.ts
+assets/
+public/
+package.json
+vite.config.ts
+tsconfig.json
+README.md
+```
+
+## Descripción de Componentes
+- **`App.tsx`**: Componente principal de la aplicación.
+- **`ExpenseTable.tsx`**: Tabla personalizada para mostrar transacciones.
+- **`Form.tsx`**: Formulario para agregar nuevas transacciones.
+- **`Extract.tsx`**: Muestra el balance total de ingresos y gastos.
+- **`NavBar.tsx`**: Barra de navegación de la aplicación.
+
+## Manejo del Estado Global
+El estado global de la aplicación se administra mediante el **Context API**:
+- **`GlobalState.tsx`**: Proveedor del contexto global.
+- **`AppReducer.tsx`**: Reducer que gestiona las acciones del estado global.
+
+## Utilidades
+- **`ExpenseTools.tsx`**: Funciones auxiliares para gestionar transacciones.
+- **`FormatCurrency.tsx`**: Función para formatear valores monetarios.
+
+## Configuración de ESLint
+El proyecto utiliza ESLint para mantener la calidad del código. La configuración se encuentra en **eslint.config.js**.
+
+## Licencia
+Este proyecto está licenciado bajo la **Licencia MIT**. Consulta el archivo LICENSE para más detalles.
+
