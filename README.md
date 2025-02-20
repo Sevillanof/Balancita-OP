@@ -4,6 +4,7 @@ Este proyecto es una aplicación web para gestionar ingresos y gastos de manera 
 
 ## Tecnologías utilizadas
 - **Framework:** React con TypeScript y Vite
+- **Componentes:** Material UI
 - **Estilos:** CSS
 - **Estado Global:** Context API con Reducer
 - **Linter:** ESLint
