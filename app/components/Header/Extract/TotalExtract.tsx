@@ -14,8 +14,6 @@ export const TotalExtract = () => {
     amounts.filter((item) => item < 0).reduce((acc, item) => (acc += item), 0) *
     -1;
 
-  if (!transactions) return <div>Loading...</div>;
-
   return (
     <div className="extract-container">
       <div className="extract-grid">
