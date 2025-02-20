@@ -3,8 +3,9 @@ import CustomRow from './CustomRow';
 import EmptyTable from './EmptyTable';
 import { useGlobalState } from "../../../../../context/GlobalState";
 
+
 export const CustomTable = () => {
-  const { transactions, deleteTransaction } = useGlobalState();
+  const { transactions } = useGlobalState();
  
   console.log(transactions)
   if (transactions.length <= 0)
@@ -15,15 +16,15 @@ export const CustomTable = () => {
   return (
     <>
      <TableContainer component={Paper}>
-     <Table aria-label="collapsible table">
+     <Table className='table-container' aria-label="collapsible table">
      <TableHead>
-          <TableRow>
-            <TableCell />
-            <TableCell>Descripcion</TableCell>
-            <TableCell align="right">Categoria</TableCell>
-            <TableCell align="right">Monto</TableCell>
+          {/* <TableRow>
+            <TableCell className='empty-cell' />
+            <TableCell className='description-cell'>Descripcion</TableCell>
+            <TableCell className='category-cell'align="right">Categoria</TableCell>
+            <TableCell className='amount-cell'align="left">Monto</TableCell>
             
-          </TableRow>
+          </TableRow> */}
         </TableHead>
         <TableBody>
         {transactions.map((transaction) => (

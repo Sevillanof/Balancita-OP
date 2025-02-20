@@ -29,7 +29,7 @@ export const ExpenseForm = () => {
       id: window.crypto.getRandomValues(new Uint16Array(1))[0],
       date: moment().format("L"),
       category: data.category,
-      description: data.description,
+      description: data.description.toUpperCase(),
       amount: +data.amount, // Modifico el string para que sea un numero
     });
     reset();
@@ -49,8 +49,9 @@ export const ExpenseForm = () => {
         <option value="Comida">Comida</option>
         <option value="Ocio">Ocio</option>
         <option value="Transporte">Transporte</option>
+        {/* Agregar un option (Boton dentro del option?) para agregar una nueva categoria */}
       </select>
-      {/* Buscar porque no puedo dejar el TYPE del CustomInput en number, solucion provisional, dejarlo como String */}
+      
       <CustomInput
         name="amount"
         control={control}

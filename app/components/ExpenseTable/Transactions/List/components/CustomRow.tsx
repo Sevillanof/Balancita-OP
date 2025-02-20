@@ -3,6 +3,7 @@ import {Box, Collapse,IconButton, Table, TableBody, TableCell,TableContainer,Tab
 import { KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material';
 import TableProps from '../models/table.models';
 import { useGlobalState } from "../../../../../context/GlobalState";
+import './CustomRow.css';
 
 export const CustomRow: React.FC<TableProps> = ({id, description, category, amount}) => {
   const {transactions, deleteTransaction } = useGlobalState();  
@@ -14,7 +15,7 @@ export const CustomRow: React.FC<TableProps> = ({id, description, category, amou
     <>
     <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
 
-      <TableCell>
+      <TableCell className='empty-cell'>
 
         <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
           {open ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
@@ -22,11 +23,11 @@ export const CustomRow: React.FC<TableProps> = ({id, description, category, amou
 
       </TableCell>
 
-      <TableCell component="th" scope="row">
+      <TableCell className='description-cell' component="th" scope="row">
         {description}
       </TableCell>
-      <TableCell align="right">{category}</TableCell>
-      <TableCell align="right">${amount}</TableCell>
+      <TableCell className='category-cell' align="left">{category}</TableCell>
+      <TableCell className='amount-cell'align="right">${amount}</TableCell>
       <TableCell align="right">
         <button
                       className="delete-button"
