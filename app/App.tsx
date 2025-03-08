@@ -1,4 +1,5 @@
-import { ExpenseList, ExpenseForm, NavBar, TotalExtract } from "./components";
+import { ExpenseForm, NavBar, TotalExtract, ExpenseTable } from "./components";
+import FormTableContainer from "./components/ExpenseTable/Transactions/FormTableContainer";
 import "../app/App.css";
 import { GlobalProvider } from "./context/GlobalState";
 
@@ -7,8 +8,7 @@ function App() {
     <GlobalProvider>
       <NavBar />
       <TotalExtract />
-      <ExpenseForm />
-      <ExpenseList />
+      <FormTableContainer />
     </GlobalProvider>
   );
 }

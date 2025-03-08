@@ -4,15 +4,19 @@ import { formatCurrency } from "../../../utils/formatCurrency";
 
 export const TotalExtract = () => {
   const { transactions } = useGlobalState();
+  
+  const income = transactions
+  .filter((item) => item.category === 'Ingreso')
+  .map((transaction) => transaction.amount)
+  .reduce((acc, item) => (acc += item), 0)
 
-  const amounts = transactions.map((transaction) => transaction.amount);
-  const totalAmount = amounts.reduce((acc, item) => (acc += item), 0);
-  const income = amounts
-    .filter((item) => item > 0)
-    .reduce((acc, item) => (acc += item), 0);
-  const expense =
-    amounts.filter((item) => item < 0).reduce((acc, item) => (acc += item), 0) *
-    -1;
+  const expense = transactions
+  .filter((item) => item.category !== 'Ingreso')
+  .map((transaction) => transaction.amount)
+  .reduce((acc, item) => (acc += item), 0)
+
+  const totalAmount = income - expense;
+
 
   return (
     <div className="extract-container">
@@ -20,21 +24,24 @@ export const TotalExtract = () => {
         <div className="extract-item">
           <h3 className="extract-title">Ingresos</h3>
           <h2 className={`extract-value income-value`}>
-            {formatCurrency(income)}
+            {`$${income}`} 
+
           </h2>
         </div>
 
         <div className="extract-item">
           <h3 className="extract-title">Actual</h3>
           <h2 className={`extract-value total-value`}>
-            {formatCurrency(totalAmount)}
+          {`$${totalAmount}`} 
+
           </h2>
         </div>
 
         <div className="extract-item">
           <h3 className="extract-title">Gastos</h3>
           <h2 className={`extract-value expense-value`}>
-            {formatCurrency(expense)}
+          {`$${expense}`} 
+      
           </h2>
         </div>
       </div>

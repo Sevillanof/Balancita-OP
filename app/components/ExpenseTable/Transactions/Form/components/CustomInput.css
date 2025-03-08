@@ -2,6 +2,21 @@
   border-color: #dc3545;
 }
 
+#description{
+  width: 300px;
+}
+
+#amount {
+  width: 150px;
+  -moz-appearance: textfield; /* Firefox */
+}
+
+#amount::-webkit-outer-spin-button,
+#amount::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Chrome, Safari, Edge, Opera */
+  margin: 0;
+}
+
 .error {
   color: #dc3545;
   font-size: 0.8rem;
@@ -17,6 +32,7 @@
 .form-group label {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
+  color: #bdbdbd
 }
 
 .form-group input {
@@ -24,7 +40,7 @@
   height: 50px;
   box-sizing: border-box;
   font-size: 1.5rem;
-  width: 306px;
+  background-color: #e5e5e58c;
 }
 
 .form-control {

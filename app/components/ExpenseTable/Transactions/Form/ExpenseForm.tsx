@@ -5,6 +5,7 @@ import "./ExpenseForm.css";
 import CustomInput from "./components/CustomInput";
 import { schema, FormValues } from "./models/form.model";
 import moment from "moment";
+import {OptionalCategories} from "../../../../utils/CategoriesForm";
 
 export const ExpenseForm = () => {
   const { addTransaction } = useGlobalState();
@@ -19,18 +20,19 @@ export const ExpenseForm = () => {
     resolver: zodResolver(schema),
     defaultValues: {
       description: "",
-      category: "",
+      category: "General",
       amount: 0,
     },
   });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log(data);
     addTransaction({
       id: window.crypto.getRandomValues(new Uint16Array(1))[0],
       date: moment().format("L"),
       category: data.category,
       description: data.description.toUpperCase(),
-      amount: +data.amount, // Modifico el string para que sea un numero
+      amount: data.amount, // Modifico el string para que sea un numero
     });
     reset();
   };
@@ -44,14 +46,17 @@ export const ExpenseForm = () => {
         type="text"
         error={errors.description}
       />
+      
+      <label className="label-form">Categoria
       <select className="select-form" {...register("category")}>
-        <option value="General">General</option>
-        <option value="Comida">Comida</option>
-        <option value="Ocio">Ocio</option>
-        <option value="Transporte">Transporte</option>
+        {OptionalCategories.map((category) => (
+          <option key={category} value={category}>
+            {category}
+          </option>
+        ))}
         {/* Agregar un option (Boton dentro del option?) para agregar una nueva categoria */}
       </select>
-      
+      </label>
       <CustomInput
         name="amount"
         control={control}

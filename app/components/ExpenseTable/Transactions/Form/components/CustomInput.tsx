@@ -22,6 +22,7 @@ const CustomInput = ({ name, control, label, type, error }: Props) => {
             id={name}
             type={type}
             {...field}
+            placeholder={label}
             value={field.value ?? ""}
             onChange={(e) => {
               const value =

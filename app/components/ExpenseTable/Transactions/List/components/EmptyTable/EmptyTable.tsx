@@ -1,5 +1,5 @@
 import "./EmptyTable.css"
-function EmptyTable() {
+export const EmptyTable = () => {
   return (
   <>
       <div className="empty-list">No hay gastos registrados</div>

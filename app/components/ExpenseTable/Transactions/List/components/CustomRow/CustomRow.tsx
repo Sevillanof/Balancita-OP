@@ -6,15 +6,12 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableContainer,
-  TableHead,
   TableRow,
   Typography,
-  Paper,
 } from "@mui/material";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
-import TableProps from "../models/table.models";
-import { useGlobalState } from "../../../../../context/GlobalState";
+import TableProps from "../../models/table.models";
+import { useGlobalState } from "../../../../../../context/GlobalState";
 import "./CustomRow.css";
 
 export const CustomRow: React.FC<TableProps> = ({
@@ -51,9 +48,8 @@ export const CustomRow: React.FC<TableProps> = ({
         <TableCell className="amount-cell" align="right">
           ${amount}
         </TableCell>
-        <TableCell align="right">
+        <TableCell className="delete-button" align="right">
           <button
-            className="delete-button"
             onClick={() => deleteTransaction(id)}>
             ✕
           </button>
@@ -65,16 +61,16 @@ export const CustomRow: React.FC<TableProps> = ({
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
               <Typography variant="h6" gutterBottom component="div">
-                Gastos asociados
+                { filteredCategory[0].category === "Ingreso" ? `${filteredCategory[0].category}` : `Gastos ${filteredCategory[0].category} `}
               </Typography>
               <Table size="small" aria-label="purchases">
                 <TableBody>
                   {filteredCategory.map((filterTransaction) => (
                     <TableRow key={id}>
-                      <TableCell component="th" scope="row">
+                      <TableCell id="description-cell" component="th" scope="row">
                         {filterTransaction.date}
                       </TableCell>
-                      <TableCell>{filterTransaction.description}</TableCell>
+                      <TableCell className="sub-description">{filterTransaction.description}</TableCell>
                       <TableCell align="right">
                         {filterTransaction.category}
                       </TableCell>

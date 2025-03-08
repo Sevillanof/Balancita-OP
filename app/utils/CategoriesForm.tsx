@@ -1,4 +1,6 @@
-export const OptionalExpense = [
+export const OptionalCategories = [
+  "Ingreso",	
+  "General",
   "Alquiler",
   "Comida",
   "Transporte",

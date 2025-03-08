@@ -1,0 +1,44 @@
+.empty-cell{
+    width: 0px;
+}
+
+.description-cell, .category-cell, .amount-cell, .empty-cell {
+    font-family: "Poppins", sans-serif !important ;
+    font-weight: 550 !important;
+    padding: 10px !important;
+    
+}
+.description-cell{
+    width: 42%;
+    font-size: 1.2rem !important;
+}
+
+.category-cell {
+    width: 22%;
+    font-size: 0.8rem !important;
+
+}
+.amount-cell {
+    font-size: 1.3rem !important;
+    text-align: center !important;
+}
+
+.delete-button {
+    width: 0%;
+    padding: 0px;
+    font-size: 1.3rem !important;
+    text-align: center !important;
+}
+.delete-button button {
+    background: transparent;
+    border: none;
+    color: #c62828;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .delete-button button:hover {
+    color: #f80303;
+  }
+  
