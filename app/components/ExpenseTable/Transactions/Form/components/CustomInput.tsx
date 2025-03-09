@@ -23,12 +23,13 @@ const CustomInput = ({ name, control, label, type, error }: Props) => {
             type={type}
             {...field}
             placeholder={label}
-            value={field.value ?? ""}
+            value={field.value === 0 ? "" : field.value}
             onChange={(e) => {
               const value =
                 type === "number" ? parseFloat(e.target.value) : e.target.value;
               field.onChange(value);
             }}
+
             className={`form-control ${error ? "is-invalid" : ""}`}
           />
         )}
