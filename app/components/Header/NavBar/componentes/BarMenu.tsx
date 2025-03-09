@@ -61,7 +61,6 @@ export default function BarMenu() {
                 🥸
               </IconButton>
               <Menu
-                id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
                   vertical: 'top',
