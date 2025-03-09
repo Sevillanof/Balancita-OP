@@ -1,0 +1,19 @@
+.empty-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 90%;
+  min-width: 700px;
+  height: 50px;
+  margin: 0rem auto;
+  padding: 0.5rem 1rem;
+  background-color: #e5e5e58c;
+  border: 1px solid #e0e0e0;
+  border-radius: 40px;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5) !important;
+
+  }
+
+  

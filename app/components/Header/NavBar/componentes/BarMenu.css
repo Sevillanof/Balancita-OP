@@ -1,0 +1,23 @@
+.container-bar{
+background-color: transparent !important;
+box-shadow: none !important;
+flex-direction: row !important;
+justify-content: center 
+}
+
+.container-items{
+    gap: 200px;
+}
+
+.icon-button{
+    transform: all 0.3s ease;
+}
+
+.title{
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.1rem !important;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
