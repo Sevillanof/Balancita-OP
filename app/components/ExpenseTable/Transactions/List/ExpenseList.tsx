@@ -1,4 +1,4 @@
-import {Table, TableCell,TableContainer,TableHead, TableRow, Paper, TableBody, TablePagination } from '@mui/material';
+import {Table,TableContainer,TableHead, Paper, TableBody } from '@mui/material';
 import {EmptyTable, CustomRow} from "./components";
 import { useGlobalState } from "../../../../context/GlobalState";
 import "./ExpenseList.css";
