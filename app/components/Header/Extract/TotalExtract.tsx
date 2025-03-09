@@ -1,6 +1,5 @@
 import "./TotalExtract.css";
 import { useGlobalState } from "../../../context/GlobalState";
-import { formatCurrency } from "../../../utils/formatCurrency";
 
 export const TotalExtract = () => {
   const { transactions } = useGlobalState();

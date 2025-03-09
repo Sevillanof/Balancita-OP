@@ -6,23 +6,16 @@ import {
     Toolbar,
     Typography,
     IconButton,
-    Switch,
-    FormControlLabel,
-    FormGroup,
     MenuItem,
     Menu
 } from '@mui/material';
-import { Menu as MenuOpen, AccountCircle } from '@mui/icons-material';
+import { Menu as MenuOpen } from '@mui/icons-material';
 
 
 export default function BarMenu() {
     const [isOpen, setIsOpen] = useState(false);
-    const [auth, setAuth] = useState(true);
+    const [auth] = useState(true);
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setAuth(event.target.checked);
-  };
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
