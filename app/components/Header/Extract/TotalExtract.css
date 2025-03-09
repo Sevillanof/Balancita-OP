@@ -47,19 +47,19 @@
 
 .income-value {
   color: #45a681;
-  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.1);
+  text-shadow: 0 2px 12px #45a68146;
 }
 
 .total-value {
   color: #ffffff;
   font-size: 3.2rem;
   font-weight: 500;
-  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.2);
+  text-shadow: 0 2px 12px #ffffff4b;
 }
 
 .expense-value {
   color: #f0544f;
-  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.1);
+  text-shadow: 0 2px 12px #f0544f52;
 }
 
 .extract-item:not(:last-child)::after {

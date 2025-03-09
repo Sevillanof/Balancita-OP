@@ -45,10 +45,10 @@ export const CustomRow: React.FC<TableProps> = ({
         <TableCell className="category-cell" align="left">
           {category}
         </TableCell>
-        <TableCell className="amount-cell" align="right">
+        <TableCell className="amount-cell" align="left">
           ${amount}
         </TableCell>
-        <TableCell className="delete-button" align="right">
+        <TableCell className="delete-button" align="left">
           <button
             onClick={() => deleteTransaction(id)}>
             ✕
@@ -63,10 +63,10 @@ export const CustomRow: React.FC<TableProps> = ({
               <Typography variant="h6" gutterBottom component="div">
                 { filteredCategory[0].category === "Ingreso" ? `${filteredCategory[0].category}` : `Gastos ${filteredCategory[0].category} `}
               </Typography>
-              <Table size="small" aria-label="purchases">
-                <TableBody>
+              <Table className="sub-table-container" size="small" aria-label="purchases">
+                <TableBody >
                   {filteredCategory.map((filterTransaction) => (
-                    <TableRow key={id}>
+                    <TableRow className="sub-table" key={id}>
                       <TableCell id="description-cell" component="th" scope="row">
                         {filterTransaction.date}
                       </TableCell>

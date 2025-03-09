@@ -1,6 +1,6 @@
 Paleta de colores:
 
-    BACKGROUND-COLOR: #63B986;
+    BACKGROUND-COLOR: #4a3e4e;
     CONTAINER-COLOR: #ffd6ba42;
     DEFAULT-TEXT-COLOR: #bdbdbd;
     GASTO-TEXT-COLOR: #FFD6BA;
