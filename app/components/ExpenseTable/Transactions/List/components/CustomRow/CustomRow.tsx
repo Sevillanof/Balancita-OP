@@ -67,7 +67,7 @@ export const CustomRow: React.FC<TableProps> = ({
                 <TableBody >
                   {filteredCategory.map((filterTransaction) => (
                     <TableRow className="sub-table" key={id}>
-                      <TableCell id="description-cell" component="th" scope="row">
+                      <TableCell className="description-cell" component="th" scope="row">
                         {filterTransaction.date}
                       </TableCell>
                       <TableCell className="sub-description">{filterTransaction.description}</TableCell>
