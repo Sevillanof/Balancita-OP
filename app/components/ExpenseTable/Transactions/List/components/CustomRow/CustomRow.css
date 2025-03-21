@@ -1,6 +1,3 @@
-.empty-cell{
-    width: 0px;
-}
 
 .description-cell, .category-cell, .amount-cell, .empty-cell {
     font-family: "Poppins", sans-serif !important ;
@@ -9,28 +6,10 @@
     border-bottom: 0px;
     
 }
-.description-cell{
-    width: 42%;
-    font-size: 1.2rem !important;
-}
-
-.category-cell {
-    width: 22%;
-    font-size: 0.8rem !important;
-
-}
-.amount-cell {
-    font-size: 1.3rem !important;
-    text-align: center !important;
-}
 
 .delete-button {
-    width: 0%;
+  width: 0%;
     padding: 0px;
-    font-size: 1.3rem !important;
-    text-align: center !important;
-}
-.delete-button button {
     background: transparent;
     border: none;
     color: #c62828;
@@ -57,7 +36,6 @@
     border-collapse: separate; /* Asegúrate de que el border-spacing funcione */
     margin-bottom: 5px !important;
     border-radius: 10px !important;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.1) !important;
     display: table !important;
     width: 100% !important;
   }
