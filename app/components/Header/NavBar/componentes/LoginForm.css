@@ -1,0 +1,19 @@
+.login-form{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    width: 275px;
+    justify-items: center;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #604f50fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 40px;
+    box-shadow: 0 2px 12px rgba(255, 255, 255, 0.2);
+}
+
+.login-form div{
+    width: 255px;
+    font-family: "Poppins", sans-serif;
+}

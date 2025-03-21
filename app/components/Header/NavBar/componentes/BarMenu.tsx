@@ -10,6 +10,7 @@ import {
     Menu
 } from '@mui/material';
 import { Menu as MenuOpen } from '@mui/icons-material';
+import LoginForm from './LoginForm';
 
 
 export default function BarMenu() {
@@ -73,9 +74,24 @@ export default function BarMenu() {
                 }}
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
+                sx={{
+                  '& .MuiPaper-root': {
+                    backgroundColor: 'transparent !important',
+                    boxShadow: 'none !important',
+                    borderRadius: '8px !important',
+                    margin: '15px 117px',
+
+                  },
+                }}
               >
+                {false ? (
+                  <>
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
+                </>
+                ) : (
+                  <LoginForm />
+                ) }
               </Menu>
             </div>
           )}
