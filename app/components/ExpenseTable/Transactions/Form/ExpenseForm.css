@@ -46,4 +46,20 @@
   background: #00d269ea;
 }
 
-/* Botón en desktop */
+@media (max-width: 768px) {
+  .form {
+    flex-direction: column;
+  }
+
+  .select-form {
+    width: 100%;
+  }
+  #description {
+    width: 100%;
+    -moz-appearance: textfield;
+  }
+  #amount {
+    width: 100%;
+    -moz-appearance: textfield; /* Firefox */
+  }
+}

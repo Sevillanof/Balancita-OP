@@ -48,3 +48,17 @@
   border: 1px solid #ced4da;
   border-radius: 0.5rem;
 }
+
+@media (max-width: 768px) {
+  .form-group input {
+    width: 100%;
+  }
+  #description {
+    width: 100%;
+    -moz-appearance: textfield;
+  }
+  #amount {
+    width: 100%;
+    -moz-appearance: textfield; /* Firefox */
+  }
+}

@@ -9,6 +9,7 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
 import TableProps from "../../models/table.models";
 import { useGlobalState } from "../../../../../../context/GlobalState";
@@ -22,6 +23,7 @@ export const CustomRow: React.FC<TableProps> = ({
 }) => {
   const { transactions, deleteTransaction } = useGlobalState();
   const [open, setOpen] = useState(false);
+  const theme = useTheme();
 
   let filteredCategory = transactions.filter(
     (transaction) => transaction.category === category
@@ -64,7 +66,12 @@ export const CustomRow: React.FC<TableProps> = ({
               <Typography variant="h6" gutterBottom component="div">
                 { filteredCategory[0].category === "Ingreso" ? `${filteredCategory[0].category}` : `Gastos ${filteredCategory[0].category} `}
               </Typography>
-              <Table sx={{ width: "550px", marginLeft: "auto",border: 'none' }} size="small" aria-label="purchases">
+              <Table sx={{ width: "550px", marginLeft: "auto",border: 'none', [theme.breakpoints.down('sm')]: {
+                width: "300px",
+                backgroundColor: "red"
+              } }}
+              
+              size="small" aria-label="purchases">
                 <TableBody >
                   {filteredCategory.map((filterTransaction) => (
                     <TableRow sx={{

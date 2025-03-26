@@ -21,3 +21,15 @@ justify-content: center
     text-shadow: 0 2px 12px rgba(255, 255, 255, 0.5);
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .container-items{
+        gap: 40px;
+    }
+    .title{
+        font-size: 1.7rem !important;
+    }
+    .container-items .title{
+        transform: all 0.3s ease;
+    }
+}
